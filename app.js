@@ -23,6 +23,10 @@ function adicionarValor(){
 
     document.getElementById("descricao").value = "";
 
+
+    let totalPendente = document.getElementById("total");
+
+    totalPendente.innerHTML = (Number(totalPendente.innerHTML) || 0) + Number(valorEmprestimo);
 }
 
 function marcarPagamento(){
