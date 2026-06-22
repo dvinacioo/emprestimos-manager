@@ -1,4 +1,4 @@
-function adicionarEmprestimo(){
+function adicionarValor(){
     let nome = document.getElementById("nome").value;
     let valorEmprestimo = document.getElementById("valor").value;
     let dataEmprestimo = document.getElementById("data").value;
@@ -12,7 +12,7 @@ function adicionarEmprestimo(){
             <td>${valorEmprestimo}</td>
             <td>${dataEmprestimo}</td>
             <td>${descricaoEmprestimo}</td>
-            <td><button onclick"marcarPagamento()">✅</button></td>
+            <td><button onclick="marcarPagamento()">✅</button></td>
         
     `
 }
