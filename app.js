@@ -15,6 +15,14 @@ function adicionarValor(){
             <td><button onclick="marcarPagamento()">✅</button></td>
         
     `
+    document.getElementById("nome").value = "";
+
+    document.getElementById("valor").value = "";
+
+    document.getElementById("data").value = "";
+
+    document.getElementById("descricao").value = "";
+
 }
 
 function marcarPagamento(){
