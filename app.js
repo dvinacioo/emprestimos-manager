@@ -7,12 +7,13 @@ function adicionarValor(){
     const tabela = document.getElementById("tabelaEmprestimos");
     
     tabela.innerHTML += `
-
+            <tr>
             <td>${nome}</td>
             <td>${valorEmprestimo}</td>
             <td>${dataEmprestimo}</td>
             <td>${descricaoEmprestimo}</td>
-            <td><button onclick="marcarPagamento()">✅</button></td>
+            <td><button onclick="marcarPagamento(this)">✅</button></td>
+            </tr>
         
     `
     document.getElementById("nome").value = "";
@@ -29,8 +30,18 @@ function adicionarValor(){
     totalPendente.innerHTML = (Number(totalPendente.innerHTML) || 0) + Number(valorEmprestimo);
 }
 
-function marcarPagamento(){
-    document.getElementById("tabelaEmprestimos").innerHTML = "";
+function marcarPagamento(botao){
+
+    let linha = botao.parentElement.parentElement;
+
+    // USANDO CELLS PARA PEGAR VALOR DO INDICE 1
+    let valor = Number(linha.cells[1].innerHTML);
+
+    linha.remove();
+
+     let totalPendente = document.getElementById("total");
+
+    totalPendente.innerHTML = Number(totalPendente.innerHTML) - valor;
 
 }
 
