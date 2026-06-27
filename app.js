@@ -38,6 +38,9 @@ function adicionarValor(){
 
 function marcarPagamento(botao){
 
+    let confirmacaoPagamento = window.confirm("Deseja CONFIRMAR o pagamento?");
+
+    if(confirmacaoPagamento == true){
     let linha = botao.parentElement.parentElement;
 
     // USANDO CELLS PARA PEGAR VALOR DO INDICE 1
@@ -48,6 +51,9 @@ function marcarPagamento(botao){
      let totalPendente = document.getElementById("total");
 
     totalPendente.innerHTML = Number(totalPendente.innerHTML) - valor;
+    } else{
+        return;
+    };
 
 }
 
