@@ -4,6 +4,12 @@ function adicionarValor(){
     let dataEmprestimo = document.getElementById("data").value;
     let descricaoEmprestimo = document.getElementById("descricao").value;
 
+    // VALIDANDO CAMPOS
+    if(nome === "" || valorEmprestimo === "" || dataEmprestimo === ""){
+        alert("Preencha ao menos os campos 'Nome', 'Valor' e 'Data'!");
+        return;
+    }
+
     const tabela = document.getElementById("tabelaEmprestimos");
     
     tabela.innerHTML += `
