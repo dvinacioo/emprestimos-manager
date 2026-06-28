@@ -15,7 +15,7 @@ function adicionarValor(){
     tabela.innerHTML += `
             <tr>
             <td>${nome}</td>
-            <td>${valorEmprestimo}</td>
+            <td>R$ ${valorEmprestimo}</td>
             <td>${dataEmprestimo}</td>
             <td>${descricaoEmprestimo}</td>
             <td><button onclick="marcarPagamento(this)">✅</button></td>
@@ -44,7 +44,7 @@ function marcarPagamento(botao){
     let linha = botao.parentElement.parentElement;
 
     // USANDO CELLS PARA PEGAR VALOR DO INDICE 1
-    let valor = Number(linha.cells[1].innerHTML);
+    let valor = Number(linha.cells[1].innerHTML.replace("R$ ", "")); // REPLACE troca o "R$ " por espaço vazio
 
     linha.remove();
 
